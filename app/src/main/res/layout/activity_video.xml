@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:onClick="onClickStart"
-                android:text="Начать" />
+                android:text="Нажми меня" />
 
         </LinearLayout>
     </RelativeLayout>

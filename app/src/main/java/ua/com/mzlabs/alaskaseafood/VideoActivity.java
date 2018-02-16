@@ -27,6 +27,7 @@ public class VideoActivity extends AppCompatActivity {
     Button start;
     String vm;
     String textmsg;
+    boolean load = false;
     int countFiles = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class VideoActivity extends AppCompatActivity {
                     videoPlayer.setVideoPath(myVideoUri);
                 }
                 videoPlayer.setOnPreparedListener(PreparedListener);
+                videoPlayer.setOnErrorListener(ErrorListener);
                 Log.i("***", "Check");
             }
         });
@@ -111,6 +113,7 @@ public class VideoActivity extends AppCompatActivity {
                             Intent intent = getIntent();
                             finish();
                             startActivity(intent);
+                            load = false;
                         }
                     }
 
@@ -185,6 +188,26 @@ public class VideoActivity extends AppCompatActivity {
     public void onBackPressed() {
 
     }
+
+    MediaPlayer.OnErrorListener ErrorListener = new MediaPlayer.OnErrorListener() {
+        @Override
+        public boolean onError(MediaPlayer m, int i, int i1) {
+            File toDel = new File(myVideoUri);
+            if (load == false)
+            {
+                if (toDel.exists()) {
+                    if (toDel.delete()) {
+                        Log.v("***", "file Deleted :" + myVideoUri);
+                        CheckVid();
+                        load = true;
+                    } else {
+                        Log.v("***", "file not Deleted :" + myVideoUri);
+                    }
+                }
+            }
+            return false;
+        }
+    };
 
     MediaPlayer.OnPreparedListener PreparedListener = new MediaPlayer.OnPreparedListener() {
 
