@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ua.com.mzlabs.alaskaseafood.AlaskaInfo"
+    tools:showIn="@layout/alaska_info">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14pt"
+        android:text="Институт маркетинга морепродуктов Аляски — Alaska Seafood Marketing Institute (ASMI) — это партнерство государства и частных рыбопромышленных компаний штата Аляска. Институт играет ключевую роль в продвижении морепродуктов Аляски в США и за рубежом, определяет их место на мировом рынке.\n\n
+Миссия ASMI — увеличение экономической ценности морепродуктов Аляски за счет позитивной узнаваемости бренда и долгосрочного активного маркетингового планирования.\n\n
+На территории Украины, Румынии, Молдовы, Грузии, Азербайджана, Казахстана, Эстонии, Латвии и Литвы работает программа поддержки рыбы и морепродуктов Аляски: помощь в поиске партнера-поставщика, промо-мероприятия в рознице и ресторанной индустрии в поддержку продукции Аляски, PR. Мы будем рады сотрудничеству с вами!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</ScrollView>
+</android.support.constraint.ConstraintLayout>
